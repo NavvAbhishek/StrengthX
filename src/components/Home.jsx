@@ -1,8 +1,12 @@
-import React from 'react'
+import {Hero,SearchExercises,Exercises} from './Index'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Hero/>
+      <SearchExercises/>
+      <Exercises/>
+    </div>
   )
 }
 

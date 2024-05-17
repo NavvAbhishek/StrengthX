@@ -1,14 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import ExerciseDetails from "./components/ExerciseDetails";
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
-import About from './components/About'
+import {Home,Footer,About,ExerciseDetails, Navbar} from "./components/Index";
 
 const App = () => {
   return (
     <>
-      <NavBar />
+     <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/exercise/:id" element={<ExerciseDetails />} />
