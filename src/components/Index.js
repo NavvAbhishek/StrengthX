@@ -8,6 +8,7 @@ import Navbar from "./NavBar";
 import SearchExercises from "./SearchExercises";
 import BodyParts from "./BodyParts";
 import BodyPartItem from "./BodyPartItem";
+import Trainers from './Trainers'
 
 export {
   Exercises,
@@ -19,5 +20,6 @@ export {
   Navbar,
   SearchExercises,
   BodyParts,
-  BodyPartItem
+  BodyPartItem,
+  Trainers
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Hero, SearchExercises, Exercises } from "./Index";
+import { Hero, SearchExercises, Exercises, Trainers } from "./Index";
 useState;
 const Home = () => {
   const [bodyPart, setBodyPart] = useState('all');
@@ -7,6 +7,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
+      <Trainers />
       <SearchExercises
         setExercises={setExercises}
         bodyPart={bodyPart}
