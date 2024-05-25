@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { exerciseOptions, fetchData } from "../utils/fetchData";
-import {BodyParts} from "./Index";
+import { BodyParts } from "./Index";
 
-const ExerciseSearch = () => {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+const ExerciseSearch = ({setExercises, bodyPart, setBodyPart}) => {
   const [search, setSearch] = useState();
-  const [exercise, setExercise] = useState([]);
   const [bodyParts, setBodyParts] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const ExerciseSearch = () => {
         "https://exercisedb.p.rapidapi.com/exercises",
         exerciseOptions
       );
-
+      console.log(exercisesData )
       const searchedExercises = exercisesData.filter(
         (exercise) =>
           exercise.name.toLowerCase().includes(search) ||
@@ -34,13 +34,13 @@ const ExerciseSearch = () => {
           exercise.bodyPart.toLowerCase().includes(search)
       );
       setSearch("");
-      setExercise(searchedExercises);
+      setExercises(searchedExercises);
     }
   };
 
   return (
-    <div className="flex justify-center items-center py-10 bg-cream">
-      <div className="text-center">
+    <div className="flex flex-col justify-center py-10 bg-cream">
+      <div className="text-center mb-20">
         <h2 className="text-3xl text-dark-green font-bold mb-6">
           Must-Know Exercises for Fitness Enthusiasts
         </h2>
@@ -60,7 +60,9 @@ const ExerciseSearch = () => {
           </button>
         </div>
       </div>
-      <BodyParts data={bodyParts}/>
+      <div className="">
+      <BodyParts data={bodyParts} bodyPart={bodyPart}  setBodyPart={setBodyPart}J/>
+      </div>
     </div>
   );
 };

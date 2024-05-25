@@ -7,6 +7,7 @@ import Home from "./Home";
 import Navbar from "./NavBar";
 import SearchExercises from "./SearchExercises";
 import BodyParts from "./BodyParts";
+import BodyPartItem from "./BodyPartItem";
 
 export {
   Exercises,
@@ -18,4 +19,5 @@ export {
   Navbar,
   SearchExercises,
   BodyParts,
+  BodyPartItem
 };
