@@ -14,7 +14,7 @@ const Hero = () => {
         </p>
         <button
           type="button"
-          className="text-gray-900 bg-gradient-to-r from-light-green via-tan to-brown hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-tan dark:focus:ring-dark-green font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-4"
+          className="gradient-button"
         >
           Explore
         </button>

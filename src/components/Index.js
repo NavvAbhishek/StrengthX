@@ -9,6 +9,7 @@ import SearchExercises from "./SearchExercises";
 import BodyParts from "./BodyParts";
 import BodyPartItem from "./BodyPartItem";
 import Trainers from './Trainers'
+import ExerciseCard from "./ExerciseCard";
 
 export {
   Exercises,
@@ -21,5 +22,6 @@ export {
   SearchExercises,
   BodyParts,
   BodyPartItem,
-  Trainers
+  Trainers,
+  ExerciseCard
 };
