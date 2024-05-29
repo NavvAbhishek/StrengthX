@@ -1,5 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import {Home,Footer,About,ExerciseDetails, Navbar} from "./components/Index";
+import {Home,Footer,ExerciseDetails, Navbar} from "./components/Index";
+import About from "./pages/About";
+import BrowseExercises from './pages/BrowseExercises'
 
 const App = () => {
   return (
@@ -9,6 +11,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/exercise/:id" element={<ExerciseDetails />} />
         <Route path="/about-us" element={<About />} />
+        <Route path="/browse" element={<BrowseExercises />} />
       </Routes>
       <Footer />
     </>

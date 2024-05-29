@@ -1,4 +1,5 @@
 import heroImg from "../assets/hero_img.jpg";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -12,15 +13,16 @@ const Hero = () => {
           cutting-edge equipment, personalized training programs, and a
           motivating environment to push you beyond your limits.
         </p>
-        <button
-          type="button"
-          className="gradient-button"
-        >
-          Explore
+        <button type="button" className="gradient-button">
+          <Link to="/browse">Explore</Link>
         </button>
       </div>
       <div className="md:w-1/2">
-        <img src={heroImg} alt="hero_image" className="w-full h-auto rounded-lg shadow-lg animate-fade-in" />
+        <img
+          src={heroImg}
+          alt="hero_image"
+          className="w-full h-auto rounded-lg shadow-lg animate-fade-in"
+        />
       </div>
     </div>
   );
