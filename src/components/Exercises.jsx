@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React, { useState } from 'react';
-import { ExerciseCard } from './Index';
+import React, { useEffect, useState } from "react";
+import { ExerciseCard } from "./Index";
+import { exerciseOptions, fetchData } from "../utils/fetchData";
 
-const Exercises = ({ exercises }) => {
+const Exercises = ({ exercises, setExercises, bodyPart }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const exercisesPerPage = 6;
 
@@ -13,7 +14,10 @@ const Exercises = ({ exercises }) => {
   // Get current exercises
   const indexOfLastExercise = currentPage * exercisesPerPage;
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage;
-  const currentExercises = exercises.slice(indexOfFirstExercise, indexOfLastExercise);
+  const currentExercises = exercises.slice(
+    indexOfFirstExercise,
+    indexOfLastExercise
+  );
 
   // Handle page change
   const handlePageChange = (pageNumber) => {
@@ -21,9 +25,31 @@ const Exercises = ({ exercises }) => {
     window.scrollTo({ top: 1800, behavior: "smooth" });
   };
 
+  useEffect(() => {
+    const fetchExercisesData = async () => {
+      let exerciseData = [];
+      if (bodyPart === "all") {
+        exerciseData = await fetchData(
+          "https://exercisedb.p.rapidapi.com/exercises?limit=100&offset=0",
+          exerciseOptions
+        );
+      } else {
+        exerciseData = await fetchData(
+          `https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`,
+          exerciseOptions
+        );
+      }
+      setExercises(exerciseData);
+    };
+    fetchExercisesData();
+  }, [bodyPart]);
+
   return (
     <div>
-      <div id="exercises" className="flex flex-wrap justify-around items-center">
+      <div
+        id="exercises"
+        className="flex flex-wrap justify-around items-center"
+      >
         {currentExercises.map((exercise, index) => (
           <div key={index}>
             <ExerciseCard exercise={exercise} />
@@ -37,7 +63,11 @@ const Exercises = ({ exercises }) => {
           <button
             key={index + 1}
             onClick={() => handlePageChange(index + 1)}
-            className={`mx-1 px-3 py-1 border ${currentPage === index + 1 ? 'bg-dark-green text-white' : 'bg-white text-black'} rounded`}
+            className={`mx-1 px-3 py-1 border ${
+              currentPage === index + 1
+                ? "bg-dark-green text-white"
+                : "bg-white text-black"
+            } rounded`}
           >
             {index + 1}
           </button>
