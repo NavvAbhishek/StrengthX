@@ -1,5 +1,4 @@
 import Exercises from "./Exercises";
-import ExerciseDetails from "./ExerciseDetails";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import Home from "./Home";
@@ -9,10 +8,11 @@ import BodyParts from "./BodyParts";
 import BodyPartItem from "./BodyPartItem";
 import Trainers from "./Trainers";
 import ExerciseCard from "./ExerciseCard";
-
+import Detail from "./Detail";
+import ExerciseVideo from "./ExerciseVideo";
+import SimilarExercises from "./SimilarExercises";
 export {
   Exercises,
-  ExerciseDetails,
   Footer,
   Hero,
   Home,
@@ -22,4 +22,7 @@ export {
   BodyPartItem,
   Trainers,
   ExerciseCard,
+  Detail,
+  ExerciseVideo,
+  SimilarExercises
 };
