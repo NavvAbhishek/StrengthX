@@ -1,7 +1,7 @@
 import { exerciseOptions, fetchData } from "../utils/fetchData";
 import { Detail, ExerciseVideo, SimilarExercises } from "../components/Index";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ExerciseDetails = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
