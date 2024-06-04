@@ -1,19 +1,21 @@
-import img from "../assets/cardio.jpeg";
+import icon1 from "../assets/strongman.png";
+import icon2 from "../assets/treadmill.png";
+import icon3 from "../assets/weightlifting.png";
 
 const Detail = ({ exerciseDetail }) => {
   const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
 
   const extraDetail = [
     {
-      icon: img,
+      icon: icon1,
       name: bodyPart,
     },
     {
-      icon: img,
+      icon: icon2,
       name: target,
     },
     {
-      icon: img,
+      icon: icon3,
       name:  equipment,
     },
   ];
@@ -22,18 +24,20 @@ const Detail = ({ exerciseDetail }) => {
     <div>
       <div className="flex flex-wrap justify-center items-start mt-20 gap-20">
         <img src={gifUrl} alt={name} loading="lazy" />
-        <div className="description">
+        <div className="description text-center">
           <div className="text-5xl font-bold capitalize">{name}</div>
           <div className="mt-10">
             Exercises keep you strong. {name} bup is one of the best <br />{" "}
             exercises to target your {target}. It will help you improve your{" "}
             <br /> mood and gain energy.
           </div>
-          <div className="mt-10">
+          <div className="mt-10 flex justify-center gap-10">
             {extraDetail.map((detail, index) => (
-              <div key={index}>
-                <img src={detail.icon} alt={detail.name} className="w-20" />
-                <div className="mb-5">{detail.name}</div>
+              <div key={index} className="flex flex-col items-center">
+                <div className="bg-brown w-20 flex justify-center p-4 rounded-[50%]">
+                <img src={detail.icon} alt={detail.name} className="w-16" />
+                </div>
+                <div className="my-5 font-semibold">{detail.name}</div>
               </div>
             ))}
           </div>
