@@ -61,7 +61,7 @@ const ExerciseSearch = ({setExercises, bodyPart, setBodyPart}) => {
         </div>
       </div>
       <div className="">
-      <BodyParts data={bodyParts} bodyPart={bodyPart}  setBodyPart={setBodyPart}/>
+      <BodyParts data={bodyParts} bodyPart={bodyPart}  setBodyPart={setBodyPart} isBodyPartItem/>
       </div>
     </div>
   );

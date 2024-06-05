@@ -1,7 +1,7 @@
 const ExerciseVideo = ({ exerciseVideos, name }) => {
   return (
     <div className="mt-10 w-screen sm:w-[90%] mx-auto">
-      <h1 className="text-4xl  capitalize text-dark-green">
+      <h1 className="text-3xl  capitalize text-dark-green">
         Watch <span className="font-semibold">{name}</span> videos
       </h1>
       <div className="flex flex-wrap justify-center gap-10">
